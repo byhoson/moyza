@@ -1,0 +1,48 @@
+.cloud {
+  width: 50%;
+}
+
+.cloud__lightning {
+  display: flex;
+  width: 100%;
+}
+
+.cloud__user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cloud__user img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: 5px 5px;
+}
+
+.cloud__user span {
+  display: block;
+  margin-top: 5px;
+}
+
+.cloud__lightnings {
+  border: 1px solid black;
+}
+
+.cloud__lightning {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fafafa;
+  border-bottom: 1px solid black;
+}
+
+.cloud__lightning:last-child {
+  border-bottom: 0px;
+}
+
+.cloud__lightning button {
+  margin-right: 20px;
+  color: black;
+  background-color: yellow;
+}
