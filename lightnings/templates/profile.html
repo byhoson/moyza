@@ -1,2 +1,22 @@
-{% extends "base.html" %} {% load static %}{% block title %}Cloud{% endblock %} {% block content %} hello, this is the profile
-page!! {% endblock %}
+{% extends "base.html" %} {% load static %}{% block title %}Cloud{% endblock %} {% block content %}
+<main class="cloud">
+    <ul class="cloud__lightnings">
+
+        <li class="cloud__lightning">
+            <div class="cloud__user">
+                <img src="{% static 'images/avatar.jpg' %}">
+                <span>{{my_lightning.created_by}}</span>
+            </div>
+            <span class="cloud__message">{{my_lightning.message}}</span>
+            <div class="cloud__buttons">
+                <button>catch</button>
+                <button>more..</button>
+            </div>
+
+        </li>
+
+    </ul>
+
+
+</main>
+{% endblock %}
