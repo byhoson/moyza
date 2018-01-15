@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% load static %}{% block title %}Cloud{% endblock %} {% block content %}
+<main class="cloud">
+    <ul class="cloud__lightnings">
+        <li class="cloud__lightning">
+            <div class="cloud__user">
+                <img src="{% static 'images/avatar.jpg' %}">
+                <span>byhoson</span>
+            </div>
+            <span class="cloud__message">밥 먹자</span>
+            <div class="cloud__buttons">
+                <button>catch</button>
+                <button>more..</button>
+            </div>
+
+        </li>
+        <li class="cloud__lightning">
+            <div class="cloud__user">
+                <img src="{% static 'images/avatar.jpg' %}">
+                <span>jasmine</span>
+            </div>
+            <span class="cloud__message">산책 하자</span>
+            <div class="cloud__buttons">
+                <button>catch</button>
+                <button>more..</button>
+            </div>
+        </li>
+        <li class="cloud__lightning">
+            <div class="cloud__user">
+                <img src="{% static 'images/avatar.jpg' %}">
+                <span>lynn</span>
+            </div>
+            <span class="cloud__message">코딩 하자</span>
+            <div class="cloud__buttons">
+                <button>catch</button>
+                <button>more..</button>
+            </div>
+        </li>
+        <li class="cloud__lightning">
+            <div class="cloud__user">
+                <img src="{% static 'images/avatar.jpg' %}">
+                <span>rose</span>
+            </div>
+            <span class="cloud__message">영화 보자</span>
+            <div class="cloud__buttons">
+                <button>catch</button>
+                <button>more..</button>
+            </div>
+        </li>
+    </ul>
+
+
+</main>
+{% endblock %}

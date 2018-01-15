@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser
 
 
 class Lightning(models.Model):
@@ -17,4 +16,10 @@ class Comment(models.Model):
     directed_to = models.ForeignKey(Lightning, on_delete=models.CASCADE, null=True)
     message = models.TextField()
 
+
+class Catcher(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    lightning = models.ForeignKey(
+        Lightning, on_delete=models.CASCADE, null=True)
 
