@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cloud | Moyza</title>
 </head>
@@ -13,7 +14,7 @@
 <body>
     <header>
 
-        <img src="images/logo.png" class="header__logo">
+        <img src="{% static 'images/logo.png' %}" class="header__logo">
         <input type="search" placeholder="Search Lightnings">
         <div class="header__nav">
             <a href="index.html">
@@ -30,35 +31,48 @@
         <ul class="cloud__lightnings">
             <li class="cloud__lightning">
                 <div class="cloud__user">
-                    <img src="images/avatar.jpg">
+                    <img src="{% static 'images/avatar.jpg' %}">
                     <span>byhoson</span>
                 </div>
                 <span class="cloud__message">밥 먹자</span>
-                <button>catch</button>
+                <div class="cloud__buttons">
+                    <button>catch</button>
+                    <button>more..</button>
+                </div>
+
             </li>
             <li class="cloud__lightning">
                 <div class="cloud__user">
-                    <img src="images/avatar.jpg">
+                    <img src="{% static 'images/avatar.jpg' %}">
                     <span>jasmine</span>
                 </div>
                 <span class="cloud__message">산책 하자</span>
-                <button>catch</button>
+                <div class="cloud__buttons">
+                    <button>catch</button>
+                    <button>more..</button>
+                </div>
             </li>
             <li class="cloud__lightning">
                 <div class="cloud__user">
-                    <img src="images/avatar.jpg">
+                    <img src="{% static 'images/avatar.jpg' %}">
                     <span>lynn</span>
                 </div>
                 <span class="cloud__message">코딩 하자</span>
-                <button>catch</button>
+                <div class="cloud__buttons">
+                    <button>catch</button>
+                    <button>more..</button>
+                </div>
             </li>
             <li class="cloud__lightning">
                 <div class="cloud__user">
-                    <img src="images/avatar.jpg">
+                    <img src="{% static 'images/avatar.jpg' %}">
                     <span>rose</span>
                 </div>
                 <span class="cloud__message">영화 보자</span>
-                <button>catch</button>
+                <div class="cloud__buttons">
+                    <button>catch</button>
+                    <button>more..</button>
+                </div>
             </li>
         </ul>
 
