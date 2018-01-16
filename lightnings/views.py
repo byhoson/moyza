@@ -20,3 +20,11 @@ def profile_view(request):
             return render(request, 'profile.html', context={'my_lightning': my_lightning})
         else:
             return HttpResponse('hello')
+
+
+def lightning_view(request):
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            return render(request, 'lightning.html')
+        else:
+            return HttpResponse('hello')

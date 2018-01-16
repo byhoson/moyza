@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %}{% block title %}Cloud{% endblock %} {% block content %}
+{% extends "base.html" %} {% load static %}{% block title %}Lightning{% endblock %} {% block content %}
 <main class="cloud">
     <ul class="cloud__lightnings">
         {% for lightning in all_lightnings %}
@@ -10,9 +10,9 @@
             <span class="cloud__message">{{lightning.message}}</span>
             <div class="cloud__buttons">
                 <button>catch</button>
-                <form action="/lightning" method="get">
-                    <input type="submit" value="more">
-                </form>
+                <a href="/lightning">
+                    <button>more..</button>
+                </a>
             </div>
 
         </li>
