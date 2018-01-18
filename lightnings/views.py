@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Lightning, Comment, Catcher
+from django.views import generic
 
 
 def index_view(request):
@@ -25,6 +26,21 @@ def profile_view(request):
 def lightning_view(request):
     if request.method == "GET":
         if request.user.is_authenticated:
-            return render(request, 'lightning.html')
+            
+            return render(request, 'lightning.html', context={'my_lightning': my_lightning})
         else:
             return HttpResponse('hello')
+
+
+class LightningListView(generic.ListView):
+    model = Lightning
+    context_object_name = 'all_lightnings'
+    template_name = 'cloud.html'
+
+
+class LightningDetailView(generic.DetailView):
+    model = Lightning
+
+    template_name = 'lightning.html'
+
+

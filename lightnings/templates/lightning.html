@@ -1,24 +1,8 @@
 {% extends "base.html" %} {% load static %}{% block title %}Lightning{% endblock %} {% block content %}
 <main class="cloud">
-    <ul class="cloud__lightnings">
-        {% for lightning in all_lightnings %}
-        <li class="cloud__lightning">
-            <div class="cloud__user">
-                <img src="{% static 'images/avatar.jpg' %}">
-                <span>{{lightning.created_by}}</span>
-            </div>
-            <span class="cloud__message">{{lightning.message}}</span>
-            <div class="cloud__buttons">
-                <button>catch</button>
-                <a href="/lightning">
-                    <button>more..</button>
-                </a>
-            </div>
-
-        </li>
-        {% endfor %}
-    </ul>
-
-
+    <h1>{{lightning.created_by}}</h1>
+    <h1>{{lightning.created_at}}</h1>
+    <h1>{{lightning.location}}</h1>
+    <h1>{{lightning.message}}</h1>
 </main>
 {% endblock %}
