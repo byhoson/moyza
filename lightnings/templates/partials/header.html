@@ -1,0 +1,17 @@
+{% load static %}
+<header>
+
+    <a href="{% url 'cloud' %}">
+        <img src="{% static 'images/logo.png' %}" class="header__logo">
+    </a>
+    <input type="search" placeholder="Search Lightnings">
+    <div class="header__nav">
+        <a href="{% url 'cloud' %}">
+            <i class="fa fa-cloud" aria-hidden="true"></i>
+        </a>
+        <a href="{% url 'profile' %}">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+    </div>
+
+</header>
