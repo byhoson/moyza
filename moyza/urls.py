@@ -19,7 +19,7 @@ from lightnings import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index_view),
-    path('lightning', views.lightning_view),
-    path('profile', views.profile_view)
+    path('', views.index_view, name='cloud'),
+    path('lightning', views.lightning_view, name='lightning'),
+    path('profile', views.profile_view, name='profile')
 ]

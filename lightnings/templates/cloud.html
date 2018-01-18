@@ -10,8 +10,8 @@
             <span class="cloud__message">{{lightning.message}}</span>
             <div class="cloud__buttons">
                 <button>catch</button>
-                <form action="/lightning" method="get">
-                    <input type="submit" value="more">
+                <form action="{% url 'lightning' %}" method="get">
+                    <input type="submit" value="more" name="id">
                 </form>
             </div>
 
