@@ -8,7 +8,17 @@ def index_view(request):
     if request.method == "GET":
         if request.user.is_authenticated:      
             all_lightnings = Lightning.objects.all()
-            return render(request, 'cloud.html', context={'all_lightnings':all_lightnings})
+            num_visits = request.session.get('num_visits', 0)
+            request.session['num_visits'] = num_visits + 1
+            return render(request, 'cloud.html', context={'all_lightnings':all_lightnings, 'num_visits':num_visits})
+        else:
+            return HttpResponse('hello')
+
+
+def test_view(request):
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            return render(request, 'registration/login.html')
         else:
             return HttpResponse('hello')
 

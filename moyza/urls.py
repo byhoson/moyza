@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from lightnings import views
 
 urlpatterns = [
@@ -23,5 +23,8 @@ urlpatterns = [
     #path('', views.index_view, name='cloud'),
     #path('lightning', views.lightning_view, name='lightning'),
     path('lightning/<int:pk>', views.LightningDetailView.as_view(), name='lightning'),
-    path('profile', views.profile_view, name='profile')
+    path('profile', views.profile_view, name='profile'),
+    path('num_visits', views.index_view, name='cloud'),
+    path('test', views.test_view, name='test'),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
