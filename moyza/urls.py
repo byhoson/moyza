@@ -24,7 +24,7 @@ urlpatterns = [
     #path('lightning', views.lightning_view, name='lightning'),
     path('lightning/<int:pk>', views.LightningDetailView.as_view(), name='lightning'),
     path('profile', views.profile_view, name='profile'),
-    path('num_visits', views.index_view, name='cloud'),
-    path('test', views.test_view, name='test'),
+    #path('num_visits', views.index_view, name='cloud'),
+    path('throw', views.lightning_new, name='throw'),
     path('accounts/', include('django.contrib.auth.urls'))
 ]

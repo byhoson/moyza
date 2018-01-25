@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Lightning, Comment, Catcher
 from django.views import generic
+from .forms import LightningForm
+from django.shortcuts import redirect
 
 
 def index_view(request):
@@ -54,3 +56,15 @@ class LightningDetailView(generic.DetailView):
     template_name = 'lightning.html'
 
 
+def lightning_new(request):
+    if request.method == "POST":
+        form = LightningForm(request.POST)
+        if form.is_valid():
+            lightning = form.save(commit=False)
+            lightning.created_by = request.user
+            #lightning.created_at = timezone.now()
+            lightning.save()
+            return redirect('lightning', pk=lightning.pk)
+    else:
+        form = LightningForm()
+    return render(request, 'throw.html', {'form': form})

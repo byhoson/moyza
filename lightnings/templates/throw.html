@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% load static %}{% block title %}Throw{% endblock %} {% block content %}
+<main class="cloud">
+    <h1>Throw Lightning</h1>
+    <form method="POST">{% csrf_token %} {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</main>
+{% endblock %}
