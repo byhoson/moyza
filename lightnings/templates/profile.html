@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% load static %}{% block title %}Profile{% endblock %} {% block content %}
 <main class="cloud">
+    <h1>My Lightnings</h1>
     <ul class="cloud__lightnings">
-
+        {% for my_lightning in my_lightnings %}
         <li class="cloud__lightning">
             <div class="cloud__user">
                 <img src="{% static 'images/avatar.jpg' %}">
@@ -14,9 +15,22 @@
             </div>
 
         </li>
-
+        {% endfor %}
     </ul>
+    <br/>
+    <h1>Caught Lightnings</h1>
+    <div class="cloud__lightning">
+        <div class="cloud__user">
+            <img src="{% static 'images/avatar.jpg' %}">
+            <span>{{caught_lightning.created_by}}</span>
+        </div>
+        <span class="cloud__message">{{caught_lightning.message}}</span>
+        <div class="cloud__buttons">
+            <button>catch</button>
+            <button>more..</button>
+        </div>
 
+    </div>
 
 </main>
 {% endblock %}

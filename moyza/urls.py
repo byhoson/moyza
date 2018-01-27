@@ -26,5 +26,6 @@ urlpatterns = [
     path('profile', views.profile_view, name='profile'),
     #path('num_visits', views.index_view, name='cloud'),
     path('throw', views.lightning_new, name='throw'),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('catch/<int:pk>', views.catch_lightning, name='catch'),
 ]

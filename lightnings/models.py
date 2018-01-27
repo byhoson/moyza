@@ -17,9 +17,10 @@ class Comment(models.Model):
     message = models.TextField()
 
 
-class Catcher(models.Model):
+class Catch(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     lightning = models.ForeignKey(
         Lightning, on_delete=models.CASCADE, null=True)
 

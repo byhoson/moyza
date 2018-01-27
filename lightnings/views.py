@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Lightning, Comment, Catcher
+from .models import Lightning, Comment, Catch
 from django.views import generic
 from .forms import LightningForm
 from django.shortcuts import redirect
@@ -28,9 +28,9 @@ def test_view(request):
 def profile_view(request):
     if request.method == "GET":
         if request.user.is_authenticated:
-            my_lightning = Lightning.objects.get(created_by__username=request.user.username)
+            my_lightnings = Lightning.objects.filter(created_by__username=request.user.username)
             
-            return render(request, 'profile.html', context={'my_lightning': my_lightning})
+            return render(request, 'profile.html', context={'my_lightnings': my_lightnings})
         else:
             return HttpResponse('hello')
 
@@ -68,3 +68,15 @@ def lightning_new(request):
     else:
         form = LightningForm()
     return render(request, 'throw.html', {'form': form})
+
+def catch_lightning(request, pk):
+    if request.method == "GET":
+        if request.user.is_authenticated:      
+            my_lightnings = Lightning.objects.filter(
+                created_by__username=request.user.username)    
+            caught_lightning = Lightning.objects.get(id=pk)
+            c = Catch(user=request.user, lightning=caught_lightning)
+            c.save()
+            return render(request, 'profile.html', context={'my_lightnings': my_lightnings, 'caught_lightning': caught_lightning})
+        else:
+            return HttpResponse('hello')

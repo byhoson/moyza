@@ -9,7 +9,9 @@
             </div>
             <span class="cloud__message">{{lightning.message}}</span>
             <div class="cloud__buttons">
-                <button>catch</button>
+                <a href="{% url 'catch' lightning.id%}">
+                    <button>catch</button>
+                </a>
                 <a href="{% url 'lightning' lightning.id %}">
                     <button>more</button>
                 </a>
